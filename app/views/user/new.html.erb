@@ -1,0 +1,26 @@
+<h1>User register</h1>
+
+
+<form name="register" method="post" action="/user">
+<% if @user.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @user.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+	USERNAME: <input type="text" id="username" name="username">
+    </p>
+  <p>
+     PASSWORD: <input type="password" name="password" id="password">
+   </p>
+  <p>
+    PASSWORD CONFIRM
+    <input type="password" name="password_confirm" id="password_confirm">
+    </p>
+<p> <input type="submit" name="submit" value="create user"></p>
+</form>
